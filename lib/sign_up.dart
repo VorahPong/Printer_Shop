@@ -19,33 +19,50 @@ class SignUpPage extends StatelessWidget {
         //
 
         // middle of the page
-        body: Column(
-            children: [
-
-                // Email input
-                Text('Email'),
-                TextField(
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.grey,
-                    ),
-                ),
-                //
-
-                // Password input
-                Text('Password'),
-                TextField(
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.grey,
-                    ),
-                ),
-                //
-            ],
-        ),
+        body: middle(),
         //
 
     );
+  }
+
+// Middle page include input for email, password, and a sign up button
+  Column middle() {
+    return Column(
+          children: [
+
+              // Email input
+              TextFormField(
+                  decoration: const InputDecoration(
+                      border: UnderlineInputBorder(),
+                      labelText: 'Enter your email',
+                  ), 
+              ),
+              //
+
+              // Password input
+              TextFormField(
+                  decoration: const InputDecoration(
+                      border: UnderlineInputBorder(),
+                      labelText: 'Enter your Password',
+                  ), 
+              ),
+              //
+              
+              // Button
+              TextButton(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                  ),
+                  onPressed: () {}, 
+                  child: Text(
+                      'Sign Me Up!',
+                      style: TextStyle(color: Colors.white), // to ensure the text is visible
+                  ),
+              ),
+
+              //
+          ],
+      );
   }
 
   // Top Bar
